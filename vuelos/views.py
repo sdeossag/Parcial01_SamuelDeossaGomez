@@ -20,7 +20,7 @@ def registrar_vuelo(request):
     return render(request, 'vuelos/registrar_vuelo.html', {'form': form})
 
 def listar_vuelos(request):
-    vuelos = Vuelo.objects.all()
+    vuelos = Vuelo.objects.all().order_by('precio')
     return render(request, 'vuelos/listar_vuelos.html', {'vuelos': vuelos})
 
 def estadisticas_vuelos(request):
